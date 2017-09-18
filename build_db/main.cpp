@@ -13,7 +13,13 @@ namespace fs = std::experimental::filesystem;
 
 using namespace jlib;
 
-void rename(string path)
+
+
+void rename_movie(std::string path) {
+
+}
+
+void statistics(string path)
 {
 	size_t files = 0;
 	//std::vector<std::string> exts;
@@ -52,12 +58,12 @@ void rename(string path)
 	JLOG_INFO("all movies:");
 	for (auto& m : movies) {
 		if (m.second.size() > 1) {
-			JLOG_WARN("same file:");
+			/*JLOG_WARN("same file:");
 			for (auto & f : m.second) {
 				JLOG_INFO(f);
-			}
+			}*/
 		} else {
-
+			rename_movie(path);
 		}
 	}
 }
@@ -73,5 +79,5 @@ int main(int argc, char** argv)
 		jlib::init_logger(path);
 	}
 	
-	rename("G:/电影");
+	statistics("G:/电影");
 }
